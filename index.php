@@ -11,7 +11,7 @@
    if(isset($whatDo)){
 	   echo '<h2> Player </h2><br><br>';
 
-	   echo '<video controls>
+	   echo '<video controls autoplay>
   		<source src=films/' . $whatDo  .  ' type="video/mp4">
 		Your browser does not support the video tag.
 	</video>';

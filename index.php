@@ -8,13 +8,15 @@
 <?php
    $whatDo = $_GET["ep"];
 
-   if(isset($whatDo)){
-	   echo '<h2> Player </h2><br><br>';
 
-	   echo '<video controls autoplay>
-  		<source src=films/' . $whatDo  .  ' type="video/mp4">
-		Your browser does not support the video tag.
-	</video>';
+   if(isset($whatDo)){
+           $whatDo = rawurldecode ($whatDo);
+           echo '<h2> Player </h2><br><br>';
+
+           echo '<video controls autoplay>
+                <source src="films/' . $whatDo  .  '" type="video/mp4">
+                Your browser does not support the video tag.
+        </video>';
    }
 ?>
 
@@ -27,14 +29,14 @@
    $thisDomain= "index.php?ep=";
 
    for($i = 0; $i < count($films); $i++){
-	if(substr($films[$i], 0, 1) == "."){
-		continue;
-	}
+        if(substr($films[$i], 0, 1) == "."){
+                continue;
+        }
 
-	echo "<a href=" . $thisDomain . $films[$i] . ">" . $films[$i] . "</a><br>";
+        $encode = rawurlencode($films[$i]);
+        echo "<a href=" . $thisDomain . $encode . ">" . $encode . "</a><br>";
    }
 ?>
 
 </body>
 </html>
-

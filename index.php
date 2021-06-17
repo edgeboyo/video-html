@@ -52,7 +52,7 @@
 
 	$encode = rawurlencode($films[$i]);
 
-	echo "<a href=" . $thisDomain . $encode . ">" . $cardStart . stripExtension($encode) . $cardEnd . "</a><br>";
+	echo "<a href=" . $thisDomain . $encode . ">" . $cardStart . stripExtension($films[$i]) . $cardEnd . "</a><br>";
    }
 ?>
 		</div>
